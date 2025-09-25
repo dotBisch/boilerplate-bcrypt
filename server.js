@@ -12,33 +12,10 @@ const bcrypt = require('bcrypt');
 
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
 
-bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
-  if (err) {
-    console.error('Error hashing password:', err);
-  } else {
-    console.log('Async hash:', hash);
-  }
-});
-
 //END_ASYNC
 
 //START_SYNC
 
-try {
-  const hashSync = bcrypt.hashSync(someOtherPlaintextPassword, saltRounds);
-  console.log('Sync hash:', hashSync);
-} catch (err) {
-  console.error('Error hashing password synchronously:', err);
-}
-
 //END_SYNC
 
 // Basic route to handle GET requests to root path
-app.get('/', (req, res) => {
-  res.send('<h1>BCrypt Example</h1><p>Check the console to see the bcrypt hashes being generated!</p>');
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log("Listening on port:", PORT)
-});
