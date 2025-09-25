@@ -7,6 +7,12 @@ fccTesting(app);
 const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
+const bcrypt = require('bcrypt');
+
+bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
+    if (err) throw err;
+    console.log("Hashed password:", hash);
+});
 
 
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
