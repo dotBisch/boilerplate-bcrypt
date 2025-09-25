@@ -33,33 +33,10 @@ try {
 
 //END_SYNC
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Basic route to handle GET requests to root path
+app.get('/', (req, res) => {
+  res.send('<h1>BCrypt Example</h1><p>Check the console to see the bcrypt hashes being generated!</p>');
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
